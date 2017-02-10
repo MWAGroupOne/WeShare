@@ -1,0 +1,15 @@
+  .clickable {
+    border: 1px dotted black;
+    width: 300px;
+    display: inline-block;
+    height:400px;
+    margin-right:20px;
+    margin-bottom:20px;
+    border-radius: 5px;
+  }
+
+  .itemdata{
+    margin-left: 20px;
+    padding: 10px;
+    font: 15px;
+  }

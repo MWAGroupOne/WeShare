@@ -4,6 +4,7 @@ var router = express.Router();
 //var msg = require('./dbHelper');
 
 /* GET home page. */
+/*
 router.get('/', function (req, res, next) {
    getData()
     .then(data => res.render('index', { title: 'Hello Express'}))
@@ -34,5 +35,5 @@ function getData() {
     });
    });
 }
-
+*/
 module.exports = router;

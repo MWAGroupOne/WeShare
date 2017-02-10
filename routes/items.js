@@ -1,17 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
-var mongo = require('mongoskin');
-var db = mongo.db('mongodb://127.0.0.1:27017/weshare');
+var db = require('./dbHelper.js');
 
 /* GET states page. */
 router.get('/:id', function (req, res, next) {
    getData(req.params.id)
    .then(data => {
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Methods", "GET", "POST", "PUT", "DELETE");
-      res.header("Access-Control-Allow-Headers", "X-Requested-With");
-      res.header("Access-Control-Allow-Headers", "Content-Type");
+      require('./corssecure.js').corsecure(res);
       res.send(data);
     })
     .catch(e => console.log("Error:" + e));

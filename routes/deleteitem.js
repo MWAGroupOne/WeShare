@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var db = require('./dbHelper.js');
 
-var mongo = require('mongoskin');
-var db = mongo.db('mongodb://127.0.0.1:27017/weshare');
-
-/* GET states page. */
 router.get('/', function (req, res, next) {
    getData()
     .then(data => res.render('states', { states: data}))

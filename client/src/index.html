@@ -31,3 +31,12 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
+<script>
+$(".clickable").click(function () {
+    if ($(this).height() == 50) {
+        $(this).height(10);
+    } else {
+        $(this).height(50);
+    }
+});
+</script>

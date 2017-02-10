@@ -11,4 +11,9 @@ export class WebService {
     return this.http.get(this.host + url);
   }
 
+  postReq(url: string, f: Object) {
+    console.log("%%%%%%%%: "+f);
+    return this.http.post(this.host + url, f);
+  }
+
 }

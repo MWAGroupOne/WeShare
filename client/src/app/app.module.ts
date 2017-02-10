@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component'; 
@@ -21,6 +22,13 @@ import {WebService} from './services/web.service';
 import {DataService} from './services/data.service';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { RegsuccessComponent } from './user/regsuccess.component';
+import { SigninComponent } from './login/signin.component';
+import { ItemaddsuccessComponent } from './items/itemaddsuccess.component';
+import { NearitemsComponent } from './items/nearitems.component';
+import { FileuploaderComponent } from './fileuploader.component';
+import { MapComponent } from './map/map.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +46,13 @@ import { SearchComponent } from './search/search.component';
     LoginComponent,
     HomeComponent,
     SearchComponent,
+    RegsuccessComponent,
+    SigninComponent,
+    ItemaddsuccessComponent,
+    NearitemsComponent,
+    FileuploaderComponent,
+    MapComponent,
+    MapComponent,
   ],
   imports: [
      BrowserModule,

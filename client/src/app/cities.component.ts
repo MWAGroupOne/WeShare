@@ -8,12 +8,19 @@ import { ActivatedRoute } from '@angular/router';
   template: `
   <div>
   <h2>Cities</h2>
-      <div *ngFor="let city of cities">
-     <a [routerLink]="['../../items', city.city]">{{city.city}}</a>
+      <div *ngFor="let city of cities"  class="clickable">
+     <a [routerLink]="['../../items', city]"> {{city}}</a>
     </div>
     </div>
   `,
-  styles: []
+    styles: [`.clickable {
+    border: 1px dotted black;
+    width: 200px;
+    display: inline-block;
+    height:50px;
+    margin-right:20px;
+    margin-bottom:20px;
+}`]
 })
 export class CitiesComponent implements OnInit {
 
@@ -27,6 +34,7 @@ export class CitiesComponent implements OnInit {
   ngOnInit() {
     this.webService.getReq(this.url).subscribe(
       response => {
+        console.log("=====------"+response.json());
         this.cities = response.json()
       },
       error => console.error(error)

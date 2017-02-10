@@ -7,7 +7,14 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-items',
   template: ` <h2>Items</h2>
       <div *ngFor="let item of items">
-     <a [routerLink]="['../../item', item._id]">{{item.name}}</a>
+     <div class="row">
+  <div class="col-sm-4">
+   <a [routerLink]="['../../item', item._id]"><img src="http://gxgraphics.com/images/promotional-products-icon-u6916.png" /></a>
+  </div>
+  <div class="col-sm-4">
+   <a [routerLink]="['../../item', item._id]"><h4>{{item.name}}</h4></a>
+  <div>{{item.description}}</div>
+  </div>
     </div>`,
   styleUrls: ['./items.component.css']
 })

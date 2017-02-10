@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-search',
-  template: `<fieldset class="scheduler-border">
+  template: `
+  <fieldset class="scheduler-border">
     <legend class="scheduler-border">Advanced Search</legend>
      <div id="custom-search-input">
                 <div class="input-group col-md-12">

@@ -1,98 +1,108 @@
 <div>
 
-<form class="form-horizontal" action='' method="POST">
-  <fieldset>
-    <div id="legend">
-      <legend class="">Register an Item</legend>
-    </div>
-    <div class="control-group">
-      <!-- Name -->
-      <label class="control-label"  for="name">Item Name</label>
-      <div class="controls">
-        <input type="text" id="name" name="name" placeholder="" class="form-control  input-sm">
-        <p class="help-block"></p>
+  <form class="form-horizontal" #f="ngForm"  (ngSubmit)="onSubmit2(f)" >
+    <fieldset>
+      <div id="legend">
+        <legend class="">Register an Item</legend>
       </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Description -->
-      <label class="control-label" for="description">Description</label>
-      <div class="controls">
-        <input type="text" id="description" name="description" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
-      </div>
-    </div>
 
-     <div class="control-group">
-      <!-- Email -->
-      <label class="control-label" for="email">Email</label>
-      <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
-      </div>
-    </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="control-group">
+            <!-- Name -->
+            <label class="control-label" for="name">Item Name</label>
+            <div class="controls">
+              <input type="text" name="name" [(ngModel)]="item.name"  #name="ngModel" class="form-control  input-sm">
+              <p class="help-block">{{testdata}}</p>
+            </div>
+          </div>
 
-     <div class="control-group">
-      <!-- Phone -->
-      <label class="control-label" for="details">Phone</label>
-      <div class="controls">
-        <input type="text" id="phone" name="phone" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
-      </div>
-    </div>
+          <div class="control-group">
+            <!-- Description -->
+            <label class="control-label" for="description">Description</label>
+            <div class="controls">
+              <textarea id="description" name="description"  [(ngModel)]="item.description"  #description="ngModel" class="form-control input-xlarge"></textarea>
+              <p class="help-block">{{item.name}}</p>
+            </div>
+          </div>
 
-     <div class="control-group">
-      <!-- City -->
-      <label class="control-label" for="city">City</label>
-      <div class="controls">
-        <input type="text" id="city" name="city" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
-      </div>
-    </div>
+          <div class="control-group">
+            <!-- Email -->
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+              <input type="text" id="email" name="email" placeholder="" [(ngModel)]="item.contacts.email" #email="ngModel" class="form-control input-xlarge">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <!-- Phone -->
+            <label class="control-label" for="details">Phone</label>
+            <div class="controls">
+              <input type="text" id="phone" name="phone"  [(ngModel)]="item.contacts.phone"  #description="ngModel" class="form-control input-xlarge">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <!-- Photo -->
+            <label class="control-label" for="photo">Upload item photo</label>
+            <div class="controls">
+              <input type="file" id="photo" name="photo" placeholder="" class="form-control input-xlarge">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-4">
 
 
-     <div class="control-group">
-      <!-- State -->
-      <label class="control-label" for="state">State</label>
-      <div class="controls">
-        <input type="text" id="state" name="state" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
-      </div>
-    </div>
+          <div class="control-group">
+            <!-- City -->
+            <label class="control-label" for="city">City</label>
+            <div class="controls">
+              <input type="text" id="city" name="city"  [(ngModel)]="item.location.city"  #description="ngModel" class="form-control input-xlarge">
+              <p class="help-block"></p>
+            </div>
+          </div>
 
-     <div class="control-group">
-      <!-- Longtude -->
-      <label class="control-label" for="lon">Longtude</label>
-      <div class="controls">
-        <input type="text" id="lon" name="lon" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
-      </div>
-    </div>
 
-     <div class="control-group">
-      <!-- Latitude -->
-      <label class="control-label" for="details">Latitude</label>
-      <div class="controls">
-        <input type="text" id="lat" name="lat" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
-      </div>
-    </div>
+          <div class="control-group">
+            <!-- State -->
+            <label class="control-label" for="state">State</label>
+            <div class="controls">
+              <input type="text" id="state" name="state"  [(ngModel)]="item.location.state"  #state="ngModel" class="form-control input-xlarge">
+              <p class="help-block"></p>
+            </div>
+          </div>
 
-     <div class="control-group">
-      <!-- Photo -->
-      <label class="control-label" for="photo">Upload item photo</label>
-      <div class="controls">
-        <input type="file" id="photo" name="photo" placeholder="" class="form-control input-xlarge">
-        <p class="help-block"></p>
+          <div class="control-group">
+            <!-- Longtude -->
+            <label class="control-label" for="lon">Longtude</label>
+            <div class="controls">
+              <input type="text" id="lon" name="lon"  [(ngModel)]="item.location.geo[0]"  #lon="ngModel" class="form-control input-xlarge">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <!-- Latitude -->
+            <label class="control-label" for="details">Latitude</label>
+            <div class="controls">
+              <input type="text" id="lat" name="lat"  [(ngModel)]="item.location.geo[1]  #lat="ngModel" class="form-control input-xlarge">
+              <p class="help-block"></p>
+            </div>
+          </div>
+</div>
       </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button class="btn btn-success">Submit</button>
+
+      <div class="control-group">
+        <!-- Button -->
+        <div class="controls">
+          <button type="submit"  class="btn btn-success">Submit</button>
+          
+        </div>
       </div>
-    </div>
-  </fieldset>
-</form>
+    </fieldset>
+  </form>
 </div>

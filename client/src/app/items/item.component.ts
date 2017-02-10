@@ -9,11 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   styles: []
 })
 export class ItemComponent implements OnInit {
-  name: string;
-  id: string;
-  description: string;
+  item: any;
   url: string;
-  postData: any;
 
   constructor(private webService: WebService, private activatedRoute: ActivatedRoute) {
     this.url = this.activatedRoute.snapshot.url[0] + "/" + this.activatedRoute.snapshot.params['id'];
@@ -22,10 +19,7 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
     this.webService.getReq(this.url).subscribe(
       response => {
-        let itemx = response.json()[0];
-        this.id = itemx._id;
-        this.name = itemx.name;
-        this.description = itemx.description;
+         this.item = response.json()[0];
       },
       error => console.error(error)
     );
